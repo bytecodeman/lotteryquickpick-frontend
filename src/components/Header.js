@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import "./Header.css";
+import bsLogo from "../img/bslogo.svg";
 
 const Header = (props) => {
   return (
@@ -8,7 +9,7 @@ const Header = (props) => {
       <Container>
         <Navbar.Brand href="https://bytecodeman.com/specialapps/">
           <img
-            src="./img/logo.svg"
+            src={bsLogo}
             width="30"
             height="30"
             className="d-inline-block align-top"

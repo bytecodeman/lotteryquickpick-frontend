@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Image,
-  Modal,
-  Figure,
-} from "react-bootstrap";
+import { Container, Row, Col, Button, Modal, Figure } from "react-bootstrap";
+import ImgWithFallback from "./ImgWithFallback";
+import logoPng from "../img/logo512.png";
+import logoWebP from "../img/logo512.webp";
+import tony from "../img/TonySilvestri.jpg";
 
 function JumboTron() {
   const [showModal, setShowModal] = useState(false);
@@ -26,12 +22,13 @@ function JumboTron() {
         </Row>
         <Row>
           <Col md="3" className="text-center mb-4">
-            <Image
-              src="img/logo512.png"
-              rounded
-              fluid
-              alt="Generate Quick Picks Logo"
-            ></Image>
+            <ImgWithFallback
+              src={logoWebP}
+              fallback={logoPng}
+              alt="Generate Quick Picks"
+              title="Generate Quick Picks"
+              className="img-fluid rounded"
+            />
           </Col>
           <Col md="9">
             <p>
@@ -71,7 +68,7 @@ function JumboTron() {
                 width={139}
                 height={140}
                 alt="Tony Silvestri"
-                src="img/TonySilvestri.jpg"
+                src={tony}
               />
               <Figure.Caption>
                 Designed and Coded by:{" "}
