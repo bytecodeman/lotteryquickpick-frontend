@@ -32,11 +32,11 @@ function SendResults({ quickPicks, setQuickPicks, setErrMsg, history }) {
           },
         });
 
-        if (!response.ok) {
-          throw new Error(response.status);
-        }
+        const message = await response.json();
 
-        await response.json();
+        if (!response.ok) {
+          throw new Error(response.status + " " + JSON.stringify(message));
+        }
 
         setErrMsg("");
         setQuickPicks(null);
